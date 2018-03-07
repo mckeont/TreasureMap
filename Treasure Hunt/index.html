@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fenn's Treasure</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
+    <link rel="stylesheet" href="css/bootstrap.css" />
+</head>
+<style>
+.sidebar {
+  position: absolute;
+  left: 0px;
+  width: 400px;
+  top: 0;
+  bottom: 0;
+  overflow-y: auto;
+  padding: 20px;
+  font-size: 16px;
+  border: solid;
+  background-color: tomato;
+}
+.main-heading {
+    font-size: 15px;
+}
+
+.button {
+  width: 400px;
+  height: 100px;
+  margin-top: 30px;
+  border: solid;
+  border-color: black;
+  border-width: 2px;
+  border-radius: 10%;
+}
+.DVImage {
+  position: absolute;
+  height: 100%;
+  width: 90%;
+  border: solid;
+  border-color: black;
+}
+
+</style>
+
+<body>
+
+  <div class="sidebar">
+  <font color="#a90533">
+    <center>
+      <h2 id="main-heading" >Fenn's Clues</h2></center></font>
+    <!---BUTTONS---->
+    <center><button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#myModal">More Info <br> About App</button></center>
+    <div></div>
+    <dd>
+  <img class="DVImage" src = "images/DeathValley.png" align= "center"></img>
+</dd>
+<div></div>
+  </div>
+  <!-- Modal -->
+  <div id="myModal" class="modal fade modal-dialog modal-md modalbox container-fluid" role="dialog">
+    <div class="modal-dialog">
+       <div class="modal-content">
+         <div class="modal-header">
+           <button type="button" class="close" data-dismiss="modal">&times;</button>
+           <h4 class="modal-title text-center"><b>Welcome to the Fenn's Clues Interactive Guide<b></h4>
+         </div>
+         <div class="modal-body text-center well">
+           <p style="margin-left:20px "> Explore, there are hidden surprises if you look closely <br>
+             Click a point to access pop-up information <br>
+            </p>
+         </div>
+         <div class="modal-body text-center well" style="background-color: tomato">
+           <p style="padding-left:25px">
+              Can you solve the puzzle of Fenn's Treasure?<br>
+           Estimated value: $850,000 </p></h6>
+         </div>
+         <div class= "modal-body well">
+<center>
+           <a><button id="lanc" class="button1">  Lancaster </button><a>
+           <a><button id="philly" class="button1"> Philadelphia</button><a>
+</center>
+         </div>
+         <div class="modal-footer text-center well">
+           <h6>
+             <p style="padding-right:200px">
+              http://fennclues.com/index.html
+            </p>
+          </h6>
+           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+         </div>
+       </div>
+     </div>
+   </div>
+   <!--End of Modal -->
+   <button>
+
+    <!-- JS IMPORTS -->
+    <div id="map" style=" position: fixed; right: 0; left: 400px; top: 0; bottom: 0 "></div>
+    <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
+    <script src= "js/jquery-2.2.0.js"></script>
+    <script src= "js/bootstrap.js"></script>
+    <script src= "http://leaflet.github.io/Leaflet.heat/dist/leaflet-heat.js"></script>
+    <script src='https://npmcdn.com/@turf/turf/turf.min.js'></script>
+    <script src= "js/setup.js"></script>
+    <script src= "js/DeathValley_places.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+    <script src= "js/leadSample.js"></script>
+    <script src= "js/zip.js"> </script>
+    <script src= "js/lancaster.js"> </script>
+    <script src= "js/main.js"></script>
+</body>
+</html>
