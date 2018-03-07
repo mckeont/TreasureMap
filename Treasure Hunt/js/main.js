@@ -1,3 +1,9 @@
+
+var roadType = function(feature) {
+  color: "tomato"
+};
+
+
 var myStyle = function(feature) {
   // return {fillColor: 'red'};
 switch(feature.properties.name) {
@@ -45,6 +51,9 @@ function onEachFeature(feature, layer) {
 // console.log(pennLogo);
 // //
 //
+L.geoJson(roads, {
+  style: roadType
+}).addTo(map);
 
  var geojson = L.geoJson(DeathValley_places, {
   style: myStyle,
