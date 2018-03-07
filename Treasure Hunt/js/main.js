@@ -35,27 +35,22 @@ function onEachFeature(feature, layer) {
   //new icon parameters
 
 // $(document).ready(function() {
-
-var pennLogo = L.icon({
-      iconUrl: 'images/pennLogo.png', //source, online search
-      iconSize: [64, 64],
-      iconAnchor: [0, 0],
-      popupAnchor: [-1, -5],
-});
-console.log(pennLogo);
 //
+// var pennLogo = L.icon({
+//       iconUrl: 'images/pennLogo.png', //source, online search
+//       iconSize: [64, 64],
+//       iconAnchor: [0, 0],
+//       popupAnchor: [-1, -5],
+// });
+// console.log(pennLogo);
+// //
 //
-
 
  var geojson = L.geoJson(DeathValley_places, {
   style: myStyle,
   onEachFeature: onEachFeature
 }).bindPopup(function (layer) {
     return layer.feature.properties.name;
-}).addTo(map);
-
-L.geoJson(lancaster,{
-onEachFeature: onEachFeature
 }).addTo(map);
 
 // var cleanUp = function(feature, layer) {
@@ -76,35 +71,35 @@ var sampleSite = {
 
 
 
-L.geoJson(leadSample, {
-  pointToLayer: function(feature, latlng) {
-              return L.circleMarker(latlng, sampleSite);
-           }
-
-}).bindPopup(function (layer) {
-
-  var result = ( "Sample Date:" + " " + layer.feature.properties.Date );
-  result = result + ("<dd>" + "<em>" + "Parts Per Million" + "</em>" + "</dd>");
-  result = result + ("<dd>" + "Sample A:" + " " + layer.feature.properties.Lead_A + "</dd>");
-
-if(layer.feature.properties.Lead_B != undefined && layer.feature.properties.Lead_B != null && layer.feature.properties.Lead_B != 0)
- result = result + ("<dd>" + "Sample B:" + " " + layer.feature.properties.Lead_B + "</dd>");
-
- if(layer.feature.properties.Lead_C != undefined && layer.feature.properties.Lead_C != null && layer.feature.properties.Lead_C != 0)
-  result = result + ("<dd>" + "Sample C:" + " " + layer.feature.properties.Lead_C + "</dd>");
-
-  if(layer.feature.properties.Lead_D != undefined && layer.feature.properties.Lead_D != null && layer.feature.properties.Lead_D != 0)
-   result = result + ("<dd>" + "Sample D:" + " " + layer.feature.properties.Lead_D + "</dd>");
-
-   if(layer.feature.properties.Lead_E != undefined && layer.feature.properties.Lead_E != null && layer.feature.properties.Lead_E != 0)
-    result = result + ("<dd>" + "Sample E:" + " " + layer.feature.properties.Lead_E + "</dd>");
-
-return result;
- }).addTo(map);
-
-
- console.log(leadSample);
-
+// L.geoJson(leadSample, {
+//   pointToLayer: function(feature, latlng) {
+//               return L.circleMarker(latlng, sampleSite);
+//            }
+//
+// }).bindPopup(function (layer) {
+//
+//   var result = ( "Sample Date:" + " " + layer.feature.properties.Date );
+//   result = result + ("<dd>" + "<em>" + "Parts Per Million" + "</em>" + "</dd>");
+//   result = result + ("<dd>" + "Sample A:" + " " + layer.feature.properties.Lead_A + "</dd>");
+//
+// if(layer.feature.properties.Lead_B != undefined && layer.feature.properties.Lead_B != null && layer.feature.properties.Lead_B != 0)
+//  result = result + ("<dd>" + "Sample B:" + " " + layer.feature.properties.Lead_B + "</dd>");
+//
+//  if(layer.feature.properties.Lead_C != undefined && layer.feature.properties.Lead_C != null && layer.feature.properties.Lead_C != 0)
+//   result = result + ("<dd>" + "Sample C:" + " " + layer.feature.properties.Lead_C + "</dd>");
+//
+//   if(layer.feature.properties.Lead_D != undefined && layer.feature.properties.Lead_D != null && layer.feature.properties.Lead_D != 0)
+//    result = result + ("<dd>" + "Sample D:" + " " + layer.feature.properties.Lead_D + "</dd>");
+//
+//    if(layer.feature.properties.Lead_E != undefined && layer.feature.properties.Lead_E != null && layer.feature.properties.Lead_E != 0)
+//     result = result + ("<dd>" + "Sample E:" + " " + layer.feature.properties.Lead_E + "</dd>");
+//
+// return result;
+//  }).addTo(map);
+//
+//
+//  console.log(leadSample);
+//
 
 
  // Discalimer clarifiying that there is a level
@@ -121,17 +116,15 @@ return result;
 //buttons_
 $(document).ready(function() {
  //Button Zoom
-  $("#lanc").click(function(){
-     map.setView([40.044437, -76.306229]);
-     map.setZoom(10);
-  });
 
-  $("#philly").click(function(){
-     map.setView([39.987614, -75.163913]);
-     map.setZoom(10);
+  $("#Mesquite").click(function(){
+     map.setView([36.66683963202171, -117.0977783203125]);
+     map.setZoom(12);
   });
 
   $('#fennsTreasure').click(function(){
+    map.setView([36.715736, -107.161087]);
+    map.setZoom(11);
     window.open(url, "http://fennclues.com/hints-and-clues-fenn-treasure.html");
   });
 
